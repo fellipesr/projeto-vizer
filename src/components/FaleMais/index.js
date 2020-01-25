@@ -62,7 +62,6 @@ export default function FaleMais() {
                 <option value="16">016</option>
                 <option value="17">017</option>
                 <option value="18">018</option>
-
               </select>
             </div>
           </Col>
@@ -76,7 +75,6 @@ export default function FaleMais() {
                     <option value="16">016</option>
                     <option value="17">017</option>
                     <option value="18">018</option>
-
                   </select>
                 </>
                 : origin === "16" ?
@@ -85,7 +83,6 @@ export default function FaleMais() {
                     <select className="option-input" name="destiny" id="" onChange={(event) => setDestiny(event.target.value)}>
                       <option value="">  </option>
                       <option value="11">011</option>
-
                     </select>
                   </>
                   : origin === "17" ?
@@ -94,7 +91,6 @@ export default function FaleMais() {
                       <select className="option-input" name="destiny" id="" onChange={(event) => setDestiny(event.target.value)}>
                         <option value="">  </option>
                         <option value="11">011</option>
-
                       </select>
                     </>
                     : origin === "18" ?
@@ -103,30 +99,37 @@ export default function FaleMais() {
                         <select className="option-input" name="destiny" id="" onChange={(event) => setDestiny(event.target.value)}>
                           <option value="">  </option>
                           <option value="11">011</option>>
-
                         </select>
                       </> :
                       <label className="title">Destino do DDD:</label>
             }
           </Col>
-          <Col><label className="title">Tempo em Minutos: </label>
-            <input className="option-input option-input-time" type="text" value={time} onChange={(event) => setTime(event.target.value)} /></Col>
-          <Col><label className="title">Plano FaleMais:</label>
+          <Col>
+            <label className="title">Tempo em Minutos: </label>
+            <input className="option-input option-input-time" type="text" value={time} onChange={(event) => setTime(event.target.value)} />
+          </Col>
+          <Col>
+            <label className="title">Plano FaleMais:</label>
             <select className="option-input" name="selectFaleMais" onChange={(event) => setSelectFaleMais(event.target.value)}>
               <option value="30">FaleMais30</option>
               <option value="60">FaleMais60</option>
               <option value="120">FaleMais120</option>
-            </select></Col>
-          <Col><label className="title">{`Com FaleMais${parseFloat(selectFaleMais)}: `}</label>
+            </select>
+          </Col>
+          <Col>
+            <label className="title">{`Com FaleMais${parseFloat(selectFaleMais)}: `}</label>
             {
               faleMais30 !== undefined ? <input className="option-input option-input-with" type="text" value={`R$${faleMais30.toFixed(2).replace('.', ',')}`} />
                 : <input className="option-input option-input-with" type="text" value={`R$0,00`} />
-            }</Col>
-          <Col><label className="title">Sem FaleMais: </label>
+            }
+          </Col>
+          <Col>
+            <label className="title">Sem FaleMais: </label>
             {
               total !== undefined ? <input className="option-input option-input-without" type="text" value={`R$${totalSemFale.toFixed(2).replace('.', ',')}`} />
                 : <input className="option-input option-input-without" type="text" value={`R$0,00`} />
-            }</Col>
+            }
+          </Col>
         </Row>
       </Container>
       <div >
